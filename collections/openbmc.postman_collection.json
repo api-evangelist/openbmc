@@ -1,0 +1,1515 @@
+{
+  "item": [
+    {
+      "id": "b196172c-d23e-4980-90ce-c27bf53648e3",
+      "name": "Get Redfish service root",
+      "request": {
+        "name": "Get Redfish service root",
+        "description": {
+          "content": "Returns the Redfish service root document describing top-level collections and capabilities.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "acce6cfd-f5b4-4ece-b4e3-d00f53e1b161",
+          "name": "Service root document",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "15be2f08-d6d4-4ee0-a2f3-183cf2aa3847",
+      "name": "Create a Redfish session",
+      "request": {
+        "name": "Create a Redfish session",
+        "description": {
+          "content": "Authenticates a user and creates a session. The X-Auth-Token response header value must be sent on subsequent requests.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "SessionService",
+            "Sessions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"UserName\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "4e284178-f595-43fb-8309-7db57086aba8",
+          "name": "Session created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "SessionService",
+                "Sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"UserName\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Session authentication token",
+              "key": "X-Auth-Token",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8187421b-0550-428d-a544-c3127086c5d6",
+      "name": "List chassis objects",
+      "request": {
+        "name": "List chassis objects",
+        "description": {},
+        "url": {
+          "path": [
+            "Chassis"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "ac86a7d8-22f0-4107-b60c-e97f408ad319",
+          "name": "Chassis collection",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Chassis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "72b7cac2-6b5a-4ed7-baed-ca8344e823a1",
+      "name": "List manager objects",
+      "request": {
+        "name": "List manager objects",
+        "description": {},
+        "url": {
+          "path": [
+            "Managers"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "3814604d-86d6-43fd-ad8a-df979201e279",
+          "name": "Managers collection",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Managers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "37110288-ef36-4d85-a5cd-a4bb67f0e362",
+      "name": "List system objects",
+      "request": {
+        "name": "List system objects",
+        "description": {},
+        "url": {
+          "path": [
+            "Systems"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "147e4441-f534-4005-bb61-5a6f760204a9",
+          "name": "Systems collection",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Systems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "fe153de9-f3a4-4d57-91c9-399470c2c67b",
+      "name": "Reset host computer system",
+      "request": {
+        "name": "Reset host computer system",
+        "description": {
+          "content": "Controls host power by issuing a ComputerSystem.Reset action.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "Systems",
+            "system",
+            "Actions",
+            "ComputerSystem.Reset"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ResetType\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b8b41c7b-527f-4df3-924e-ad6c97541c51",
+          "name": "Action accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Systems",
+                "system",
+                "Actions",
+                "ComputerSystem.Reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ResetType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "dc08bd1e-401d-41e5-853f-e2152473697b",
+          "name": "Action accepted with no body",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Systems",
+                "system",
+                "Actions",
+                "ComputerSystem.Reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ResetType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "98f97f74-593b-41d3-aed3-85502a045fd9",
+      "name": "Reboot the BMC",
+      "request": {
+        "name": "Reboot the BMC",
+        "description": {},
+        "url": {
+          "path": [
+            "Managers",
+            "bmc",
+            "Actions",
+            "Manager.Reset"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ResetType\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "415cdd9f-1547-49f3-87ab-4997f0ea4212",
+          "name": "Action accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Managers",
+                "bmc",
+                "Actions",
+                "Manager.Reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ResetType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "51ca6582-2cc0-4ff6-b779-58c0e832cedc",
+          "name": "Action accepted with no body",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Managers",
+                "bmc",
+                "Actions",
+                "Manager.Reset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ResetType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "188a00af-90dd-4f27-b77e-81985eeac644",
+      "name": "Factory reset the BMC",
+      "request": {
+        "name": "Factory reset the BMC",
+        "description": {},
+        "url": {
+          "path": [
+            "Managers",
+            "bmc",
+            "Actions",
+            "Manager.ResetToDefaults"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "e184046d-07f4-4483-857f-a88015156bfe",
+          "name": "Action accepted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Managers",
+                "bmc",
+                "Actions",
+                "Manager.ResetToDefaults"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4ba2799b-20ee-4914-876f-c4e6dedd538b",
+          "name": "Action accepted with no body",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Managers",
+                "bmc",
+                "Actions",
+                "Manager.ResetToDefaults"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "46de318f-ad65-41b5-b220-d00afef93075",
+      "name": "Get system event log entries",
+      "request": {
+        "name": "Get system event log entries",
+        "description": {},
+        "url": {
+          "path": [
+            "Systems",
+            "system",
+            "LogServices",
+            "EventLog",
+            "Entries"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "1e5fd106-ca00-46d4-b1f4-2a2650a32a4d",
+          "name": "Event log entries collection",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "Systems",
+                "system",
+                "LogServices",
+                "EventLog",
+                "Entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "7514727f-ec38-4822-a01e-112b2dc8ee25",
+      "name": "Get firmware update service",
+      "request": {
+        "name": "Get firmware update service",
+        "description": {},
+        "url": {
+          "path": [
+            "UpdateService"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a3300834-4649-4d67-8409-586c9d572a9c",
+          "name": "Update service resource",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "UpdateService"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "6b32aacd-7109-40ed-ac19-b37a7005d9f4",
+      "name": "Update the root account",
+      "request": {
+        "name": "Update the root account",
+        "description": {
+          "content": "Modifies the root account, for example to change the password.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "AccountService",
+            "Accounts",
+            "root"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "PATCH",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Password\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "7caf6a62-ed05-4912-983b-1fdc8e38a57a",
+          "name": "Account updated",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "AccountService",
+                "Accounts",
+                "root"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "eacaaf6b-ebf3-4e91-9946-d8e8527670d6",
+      "name": "List event subscriptions",
+      "request": {
+        "name": "List event subscriptions",
+        "description": {},
+        "url": {
+          "path": [
+            "EventService",
+            "Subscriptions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "926387fe-7f18-4f11-babb-5cfe135ba98f",
+          "name": "Event subscriptions collection",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "EventService",
+                "Subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "524958a4-2d2b-485e-ad8b-7fa5f4b094f5",
+      "name": "Create an event subscription",
+      "request": {
+        "name": "Create an event subscription",
+        "description": {},
+        "url": {
+          "path": [
+            "EventService",
+            "Subscriptions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Hostname or IP address of the OpenBMC-managed BMC",
+              "type": "any",
+              "value": "{{bmc}}",
+              "key": "bmc"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Destination\": \"<string>\",\n  \"EventTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Context\": \"<string>\",\n  \"Protocol\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "67674454-bc37-4363-8fc6-4360cba3fa5b",
+          "name": "Subscription created",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "EventService",
+                "Subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-Auth-Token",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Destination\": \"<string>\",\n  \"EventTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Context\": \"<string>\",\n  \"Protocol\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the OpenBMC-managed BMC",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "bmc.example.com",
+      "key": "bmc"
+    },
+    {
+      "type": "string",
+      "value": "https://{{bmc}}/redfish/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Auth-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6c7402d6-3a83-4d31-b377-0d8c64373672",
+    "name": "OpenBMC Redfish API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.\n\nContact Support:\n Name: OpenBMC Documentation",
+      "type": "text/plain"
+    }
+  }
+}
