@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openbmc-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: SessionToken
+  type: apiKey
+  in: header
+  parameter: X-Auth-Token
+  description: Redfish session token obtained from POST /SessionService/Sessions
+  sources:
+  - openapi/openbmc-openapi.yml
