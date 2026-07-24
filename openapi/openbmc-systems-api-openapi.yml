@@ -1,0 +1,75 @@
+openapi: 3.1.0
+info:
+  title: OpenBMC Redfish AccountService Systems API
+  description: OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.
+  version: 1.0.0
+  contact:
+    name: OpenBMC Documentation
+    url: https://github.com/openbmc/docs
+servers:
+- url: https://{bmc}/redfish/v1
+  description: OpenBMC Redfish service root on a BMC host
+  variables:
+    bmc:
+      default: bmc.example.com
+      description: Hostname or IP address of the OpenBMC-managed BMC
+security:
+- SessionToken: []
+tags:
+- name: Systems
+paths:
+  /Systems:
+    get:
+      summary: List system objects
+      operationId: listSystems
+      responses:
+        '200':
+          description: Systems collection
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Systems
+  /Systems/system/Actions/ComputerSystem.Reset:
+    post:
+      summary: Reset host computer system
+      description: Controls host power by issuing a ComputerSystem.Reset action.
+      operationId: resetComputerSystem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ResetType:
+                  type: string
+                  description: Reset action type (e.g. On, ForceOff, GracefulShutdown, GracefulRestart)
+      responses:
+        '200':
+          description: Action accepted
+        '204':
+          description: Action accepted with no body
+      tags:
+      - Systems
+  /Systems/system/LogServices/EventLog/Entries:
+    get:
+      summary: Get system event log entries
+      operationId: getEventLogEntries
+      responses:
+        '200':
+          description: Event log entries collection
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Systems
+components:
+  securitySchemes:
+    SessionToken:
+      type: apiKey
+      in: header
+      name: X-Auth-Token
+      description: Redfish session token obtained from POST /SessionService/Sessions

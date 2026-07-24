@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  title: OpenBMC Redfish AccountService Managers API
+  description: OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.
+  version: 1.0.0
+  contact:
+    name: OpenBMC Documentation
+    url: https://github.com/openbmc/docs
+servers:
+- url: https://{bmc}/redfish/v1
+  description: OpenBMC Redfish service root on a BMC host
+  variables:
+    bmc:
+      default: bmc.example.com
+      description: Hostname or IP address of the OpenBMC-managed BMC
+security:
+- SessionToken: []
+tags:
+- name: Managers
+paths:
+  /Managers:
+    get:
+      summary: List manager objects
+      operationId: listManagers
+      responses:
+        '200':
+          description: Managers collection
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Managers
+  /Managers/bmc/Actions/Manager.Reset:
+    post:
+      summary: Reboot the BMC
+      operationId: resetBmc
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ResetType:
+                  type: string
+      responses:
+        '200':
+          description: Action accepted
+        '204':
+          description: Action accepted with no body
+      tags:
+      - Managers
+  /Managers/bmc/Actions/Manager.ResetToDefaults:
+    post:
+      summary: Factory reset the BMC
+      operationId: resetBmcToDefaults
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Action accepted
+        '204':
+          description: Action accepted with no body
+      tags:
+      - Managers
+components:
+  securitySchemes:
+    SessionToken:
+      type: apiKey
+      in: header
+      name: X-Auth-Token
+      description: Redfish session token obtained from POST /SessionService/Sessions

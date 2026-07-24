@@ -1,0 +1,40 @@
+openapi: 3.1.0
+info:
+  title: OpenBMC Redfish AccountService Chassis API
+  description: OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.
+  version: 1.0.0
+  contact:
+    name: OpenBMC Documentation
+    url: https://github.com/openbmc/docs
+servers:
+- url: https://{bmc}/redfish/v1
+  description: OpenBMC Redfish service root on a BMC host
+  variables:
+    bmc:
+      default: bmc.example.com
+      description: Hostname or IP address of the OpenBMC-managed BMC
+security:
+- SessionToken: []
+tags:
+- name: Chassis
+paths:
+  /Chassis:
+    get:
+      summary: List chassis objects
+      operationId: listChassis
+      responses:
+        '200':
+          description: Chassis collection
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Chassis
+components:
+  securitySchemes:
+    SessionToken:
+      type: apiKey
+      in: header
+      name: X-Auth-Token
+      description: Redfish session token obtained from POST /SessionService/Sessions
