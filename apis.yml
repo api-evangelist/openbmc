@@ -6,9 +6,22 @@ description: >-
   Google, and Facebook, it provides a Linux-based firmware stack for managing and
   monitoring server hardware systems.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openbmc.png
 tags:
   - Firmware
   - Hardware
@@ -20,19 +33,90 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/openbmc/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: openbmc:openbmc-api
-    name: OpenBMC API
-    description: >-
-      API for interacting with OpenBMC baseboard management controller firmware,
-      providing programmatic access to server hardware management and monitoring
-      capabilities.
-    humanURL: https://github.com/openbmc/docs
-    tags:
-      - Firmware
-      - Hardware
-    properties:
-      - type: Documentation
-        url: https://github.com/openbmc/docs
+- aid: openbmc:openbmc-api
+  name: OpenBMC API
+  description: >-
+    API for interacting with OpenBMC baseboard management controller firmware, providing programmatic
+    access to server hardware management and monitoring capabilities.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - Firmware
+  - Hardware
+  properties:
+  - type: Documentation
+    url: https://github.com/openbmc/docs
+- aid: openbmc:openbmc-accountservice-api
+  name: OpenBMC AccountService API
+  description: The AccountService API from OpenBMC — 1 operation(s) for accountservice.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - AccountService
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-accountservice-api-openapi.yml
+- aid: openbmc:openbmc-chassis-api
+  name: OpenBMC Chassis API
+  description: The Chassis API from OpenBMC — 1 operation(s) for chassis.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - Chassis
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-chassis-api-openapi.yml
+- aid: openbmc:openbmc-eventservice-api
+  name: OpenBMC EventService API
+  description: The EventService API from OpenBMC — 1 operation(s) for eventservice.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - EventService
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-eventservice-api-openapi.yml
+- aid: openbmc:openbmc-managers-api
+  name: OpenBMC Managers API
+  description: The Managers API from OpenBMC — 3 operation(s) for managers.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - Managers
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-managers-api-openapi.yml
+- aid: openbmc:openbmc-openbmc-redfish-api-api
+  name: OpenBMC OpenBMC Redfish API API
+  description: The OpenBMC Redfish API API from OpenBMC — 1 operation(s) for openbmc redfish api.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - OpenBMC Redfish API
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-openbmc-redfish-api-api-openapi.yml
+- aid: openbmc:openbmc-sessionservice-api
+  name: OpenBMC SessionService API
+  description: The SessionService API from OpenBMC — 1 operation(s) for sessionservice.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - SessionService
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-sessionservice-api-openapi.yml
+- aid: openbmc:openbmc-systems-api
+  name: OpenBMC Systems API
+  description: The Systems API from OpenBMC — 3 operation(s) for systems.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - Systems
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-systems-api-openapi.yml
+- aid: openbmc:openbmc-updateservice-api
+  name: OpenBMC UpdateService API
+  description: The UpdateService API from OpenBMC — 1 operation(s) for updateservice.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - UpdateService
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-updateservice-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/openbmc-agentic-access.yml
