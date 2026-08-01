@@ -1,0 +1,28 @@
+{
+  "provider": "openbmc",
+  "sources": [
+    "openbmc-accountservice-api-openapi.yml",
+    "openbmc-chassis-api-openapi.yml",
+    "openbmc-eventservice-api-openapi.yml",
+    "openbmc-managers-api-openapi.yml",
+    "openbmc-openbmc-redfish-api-api-openapi.yml",
+    "openbmc-sessionservice-api-openapi.yml",
+    "openbmc-systems-api-openapi.yml",
+    "openbmc-updateservice-api-openapi.yml"
+  ],
+  "outputs": [
+    "openbmc-accountservice-api-openapi.yml",
+    "openbmc-chassis-api-openapi.yml",
+    "openbmc-eventservice-api-openapi.yml",
+    "openbmc-managers-api-openapi.yml",
+    "openbmc-openbmc-redfish-api-api-openapi.yml",
+    "openbmc-sessionservice-api-openapi.yml",
+    "openbmc-systems-api-openapi.yml",
+    "openbmc-updateservice-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
