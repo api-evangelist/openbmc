@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenBMC Redfish AccountService EventService API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Auth-Token",
+      "value": "{{X-Auth-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "EventService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List event subscriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{bmc}/redfish/v1/EventService/Subscriptions"
+          },
+          "docs": "List event subscriptions"
+        },
+        {
+          "info": {
+            "name": "Create an event subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{bmc}/redfish/v1/EventService/Subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an event subscription"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenBMC Redfish AccountService Systems API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Auth-Token",
+      "value": "{{X-Auth-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Systems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List system objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{bmc}/redfish/v1/Systems"
+          },
+          "docs": "List system objects"
+        },
+        {
+          "info": {
+            "name": "Reset host computer system",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{bmc}/redfish/v1/Systems/system/Actions/ComputerSystem.Reset",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Controls host power by issuing a ComputerSystem.Reset action."
+        },
+        {
+          "info": {
+            "name": "Get system event log entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{bmc}/redfish/v1/Systems/system/LogServices/EventLog/Entries"
+          },
+          "docs": "Get system event log entries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

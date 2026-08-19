@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenBMC Redfish AccountService OpenBMC Redfish API API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Auth-Token",
+      "value": "{{X-Auth-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OpenBMC Redfish API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Redfish service root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{bmc}/redfish/v1/"
+          },
+          "docs": "Returns the Redfish service root document describing top-level collections and capabilities."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

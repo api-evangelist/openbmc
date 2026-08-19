@@ -1,0 +1,179 @@
+{
+  "item": [
+    {
+      "id": "ac675d1a-0e43-4b57-8672-243cd859e0c6",
+      "name": "SessionService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f6dcc9d2-9e2b-4d96-83eb-fc52c2e403e7",
+          "name": "Create a Redfish session",
+          "request": {
+            "name": "Create a Redfish session",
+            "description": {
+              "content": "Authenticates a user and creates a session. The X-Auth-Token response header value must be sent on subsequent requests.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "SessionService",
+                "Sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"UserName\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "37be9b98-accd-4936-ac6a-1ec54c00c119",
+              "name": "Session created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "SessionService",
+                    "Sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                      "type": "any",
+                      "value": "{{bmc}}",
+                      "key": "bmc"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Auth-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"UserName\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Session authentication token",
+                  "key": "X-Auth-Token",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the OpenBMC-managed BMC",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "bmc.example.com",
+      "key": "bmc"
+    },
+    {
+      "type": "string",
+      "value": "https://{{bmc}}/redfish/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Auth-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8e70057f-6518-4dce-9e33-9029ff841e9c",
+    "name": "OpenBMC Redfish AccountService SessionService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.\n\nContact Support:\n Name: OpenBMC Documentation",
+      "type": "text/plain"
+    }
+  }
+}

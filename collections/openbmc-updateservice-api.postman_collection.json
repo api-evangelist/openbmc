@@ -1,0 +1,147 @@
+{
+  "item": [
+    {
+      "id": "af55948c-a70a-4975-9f68-857ce725309a",
+      "name": "UpdateService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b568e092-d17d-42f0-80d5-532afe03bd14",
+          "name": "Get firmware update service",
+          "request": {
+            "name": "Get firmware update service",
+            "description": {},
+            "url": {
+              "path": [
+                "UpdateService"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97228d64-61b7-49e4-aee9-1adfeb6caae0",
+              "name": "Update service resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "UpdateService"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                      "type": "any",
+                      "value": "{{bmc}}",
+                      "key": "bmc"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Auth-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the OpenBMC-managed BMC",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "bmc.example.com",
+      "key": "bmc"
+    },
+    {
+      "type": "string",
+      "value": "https://{{bmc}}/redfish/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Auth-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fc06cc1a-7238-4502-a201-fbbfaf4385cf",
+    "name": "OpenBMC Redfish AccountService UpdateService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.\n\nContact Support:\n Name: OpenBMC Documentation",
+      "type": "text/plain"
+    }
+  }
+}

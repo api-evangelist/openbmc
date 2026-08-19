@@ -1,0 +1,253 @@
+{
+  "item": [
+    {
+      "id": "b1757cbc-5db4-457a-8114-03dfccfe42cd",
+      "name": "EventService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8461dbbe-8092-4e2a-a428-66ca589e23a6",
+          "name": "List event subscriptions",
+          "request": {
+            "name": "List event subscriptions",
+            "description": {},
+            "url": {
+              "path": [
+                "EventService",
+                "Subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "752421c5-913c-432f-9fe2-79648ba9ba63",
+              "name": "Event subscriptions collection",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EventService",
+                    "Subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                      "type": "any",
+                      "value": "{{bmc}}",
+                      "key": "bmc"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Auth-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa37004d-8145-40af-9db2-e1d01171ef34",
+          "name": "Create an event subscription",
+          "request": {
+            "name": "Create an event subscription",
+            "description": {},
+            "url": {
+              "path": [
+                "EventService",
+                "Subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                  "type": "any",
+                  "value": "{{bmc}}",
+                  "key": "bmc"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Destination\": \"<string>\",\n  \"EventTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Context\": \"<string>\",\n  \"Protocol\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec84cb80-0470-4732-be13-0e48f4665659",
+              "name": "Subscription created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "EventService",
+                    "Subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the OpenBMC-managed BMC",
+                      "type": "any",
+                      "value": "{{bmc}}",
+                      "key": "bmc"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Auth-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Destination\": \"<string>\",\n  \"EventTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Context\": \"<string>\",\n  \"Protocol\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the OpenBMC-managed BMC",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "bmc.example.com",
+      "key": "bmc"
+    },
+    {
+      "type": "string",
+      "value": "https://{{bmc}}/redfish/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Auth-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f9530c77-9c11-437d-90b8-d8a427aa0bec",
+    "name": "OpenBMC Redfish AccountService EventService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.\n\nContact Support:\n Name: OpenBMC Documentation",
+      "type": "text/plain"
+    }
+  }
+}
