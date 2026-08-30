@@ -131,6 +131,9 @@ apis:
   - type: OpenAPI
     url: openapi/openbmc-updateservice-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/openbmc-capability-edges.yml
+    name: OpenBMC Business Capability Map
   - type: AgenticAccess
     url: agentic-access/openbmc-agentic-access.yml
   - type: Authentication
