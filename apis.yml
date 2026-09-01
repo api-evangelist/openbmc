@@ -124,7 +124,7 @@ apis:
   description: The UpdateService API from OpenBMC — 1 operation(s) for updateservice.
   humanURL: https://github.com/openbmc/docs
   tags:
-  - UpdateService
+  - Update Service
   tags_raw:
   - UpdateService
   properties:
