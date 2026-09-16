@@ -1,10 +1,8 @@
 aid: openbmc
 name: OpenBMC
-description: >-
-  OpenBMC is a Linux Foundation project producing an open source implementation
-  of baseboard management controller firmware. Founded by Microsoft, Intel, IBM,
-  Google, and Facebook, it provides a Linux-based firmware stack for managing and
-  monitoring server hardware systems.
+description: OpenBMC is a Linux Foundation project producing an open source implementation of baseboard
+  management controller firmware. Founded by Microsoft, Intel, IBM, Google, and Facebook, it provides
+  a Linux-based firmware stack for managing and monitoring server hardware systems.
 type: Index
 deliveryModel:
   model: unknown
@@ -34,20 +32,18 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/openbmc.png
 tags:
-  - Firmware
-  - Hardware
-  - Linux Foundation
-  - Server
+- Firmware
+- Hardware
+- Linux Foundation
+- Server
 created: '2026-03-16'
-modified: '2026-04-28'
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/openbmc/refs/heads/main/apis.yml
+modified: '2026-09-16'
+url: https://raw.githubusercontent.com/api-evangelist/openbmc/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
 - aid: openbmc:openbmc-api
   name: OpenBMC API
-  description: >-
-    API for interacting with OpenBMC baseboard management controller firmware, providing programmatic
+  description: API for interacting with OpenBMC baseboard management controller firmware, providing programmatic
     access to server hardware management and monitoring capabilities.
   humanURL: https://github.com/openbmc/docs
   tags:
@@ -93,7 +89,7 @@ apis:
   - type: OpenAPI
     url: openapi/openbmc-managers-api-openapi.yml
 - aid: openbmc:openbmc-openbmc-redfish-api-api
-  name: OpenBMC OpenBMC Redfish API API
+  name: OpenBMC Redfish API
   description: The OpenBMC Redfish API API from OpenBMC — 1 operation(s) for openbmc redfish api.
   humanURL: https://github.com/openbmc/docs
   tags:
@@ -131,21 +127,21 @@ apis:
   - type: OpenAPI
     url: openapi/openbmc-updateservice-api-openapi.yml
 common:
-  - type: CapabilityMap
-    url: capabilities/openbmc-capability-edges.yml
-    name: OpenBMC Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/openbmc-agentic-access.yml
-  - type: Authentication
-    url: authentication/openbmc-authentication.yml
-  - type: Documentation
-    name: OpenBMC Documentation
-    description: Official documentation for OpenBMC.
-    url: https://github.com/openbmc/docs
-  - type: GitHubOrg
-    name: OpenBMC GitHub
-    description: Source code and repositories for OpenBMC.
-    url: https://github.com/openbmc
+- type: CapabilityMap
+  url: capabilities/openbmc-capability-edges.yml
+  name: OpenBMC Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/openbmc-agentic-access.yml
+- type: Authentication
+  url: authentication/openbmc-authentication.yml
+- type: Documentation
+  name: OpenBMC Documentation
+  description: Official documentation for OpenBMC.
+  url: https://github.com/openbmc/docs
+- type: GitHubOrg
+  name: OpenBMC GitHub
+  description: Source code and repositories for OpenBMC.
+  url: https://github.com/openbmc
 maintainers:
-  - FN: Kin Lane
-    email: info@apievangelist.com
+- FN: Kin Lane
+  email: info@apievangelist.com
