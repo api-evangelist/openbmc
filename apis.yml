@@ -43,7 +43,8 @@ specificationVersion: '0.23'
 apis:
 - aid: openbmc:openbmc-api
   name: OpenBMC API
-  description: API for interacting with OpenBMC baseboard management controller firmware, providing programmatic
+  description: >-
+    API for interacting with OpenBMC baseboard management controller firmware, providing programmatic
     access to server hardware management and monitoring capabilities.
   humanURL: https://github.com/openbmc/docs
   tags:
@@ -70,15 +71,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/openbmc-chassis-api-openapi.yml
-- aid: openbmc:openbmc-eventservice-api
-  name: OpenBMC EventService API
-  description: The EventService API from OpenBMC — 1 operation(s) for eventservice.
-  humanURL: https://github.com/openbmc/docs
-  tags:
-  - EventService
-  properties:
-  - type: OpenAPI
-    url: openapi/openbmc-eventservice-api-openapi.yml
 - aid: openbmc:openbmc-managers-api
   name: OpenBMC Managers API
   description: The Managers API from OpenBMC — 3 operation(s) for managers.
@@ -115,17 +107,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/openbmc-systems-api-openapi.yml
-- aid: openbmc:openbmc-updateservice-api
-  name: OpenBMC UpdateService API
-  description: The UpdateService API from OpenBMC — 1 operation(s) for updateservice.
+- aid: openbmc:openbmc-event-service-api
+  name: OpenBMC Event Service API
+  description: The Event Service API from OpenBMC — 1 operation(s) for event service.
+  humanURL: https://github.com/openbmc/docs
+  tags:
+  - Event Service
+  properties:
+  - type: OpenAPI
+    url: openapi/openbmc-event-service-api-openapi.yml
+- aid: openbmc:openbmc-update-service-api
+  name: OpenBMC Update Service API
+  description: The Update Service API from OpenBMC — 1 operation(s) for update service.
   humanURL: https://github.com/openbmc/docs
   tags:
   - Update Service
-  tags_raw:
-  - UpdateService
   properties:
   - type: OpenAPI
-    url: openapi/openbmc-updateservice-api-openapi.yml
+    url: openapi/openbmc-update-service-api-openapi.yml
 common:
 - type: CapabilityMap
   url: capabilities/openbmc-capability-edges.yml
