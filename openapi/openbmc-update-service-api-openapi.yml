@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: OpenBMC Redfish AccountService UpdateService API
+  title: OpenBMC Redfish Update Service API
   description: OpenBMC exposes a Redfish-conformant REST API over HTTPS for managing server baseboard management controllers (BMCs). The API provides programmatic access to chassis, manager, system, power, log, event, and update services. Authentication is performed via a session token returned from the SessionService and supplied in the X-Auth-Token header on subsequent requests. This OpenAPI definition reflects the endpoints documented in the OpenBMC Redfish cheatsheet.
   version: 1.0.0
   contact:
@@ -16,7 +16,7 @@ servers:
 security:
 - SessionToken: []
 tags:
-- name: UpdateService
+- name: Update Service
 paths:
   /UpdateService:
     get:
@@ -30,7 +30,7 @@ paths:
               schema:
                 type: object
       tags:
-      - UpdateService
+      - Update Service
 components:
   securitySchemes:
     SessionToken:

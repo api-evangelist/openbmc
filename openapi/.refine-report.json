@@ -1,14 +1,7 @@
 {
   "provider": "openbmc",
   "sources": [
-    "openbmc-accountservice-api-openapi.yml",
-    "openbmc-chassis-api-openapi.yml",
-    "openbmc-eventservice-api-openapi.yml",
-    "openbmc-managers-api-openapi.yml",
-    "openbmc-openbmc-redfish-api-api-openapi.yml",
-    "openbmc-sessionservice-api-openapi.yml",
-    "openbmc-systems-api-openapi.yml",
-    "openbmc-updateservice-api-openapi.yml"
+    "_original/openbmc-openapi.yml"
   ],
   "outputs": [
     "openbmc-accountservice-api-openapi.yml",
@@ -20,9 +13,46 @@
     "openbmc-systems-api-openapi.yml",
     "openbmc-updateservice-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openbmc-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "openbmc-openapi.yml: tagged paths GET / -> OpenBMC Redfish API",
+    "openbmc-openapi.yml: tagged paths POST /SessionService/Sessions -> SessionService",
+    "openbmc-openapi.yml: tagged paths GET /Chassis -> Chassis",
+    "openbmc-openapi.yml: tagged paths GET /Managers -> Managers",
+    "openbmc-openapi.yml: tagged paths GET /Systems -> Systems",
+    "openbmc-openapi.yml: tagged paths POST /Systems/system/Actions/ComputerSystem.Reset -> Systems",
+    "openbmc-openapi.yml: tagged paths POST /Managers/bmc/Actions/Manager.Reset -> Managers",
+    "openbmc-openapi.yml: tagged paths POST /Managers/bmc/Actions/Manager.ResetToDefaults -> Managers",
+    "openbmc-openapi.yml: tagged paths GET /Systems/system/LogServices/EventLog/Entries -> Systems",
+    "openbmc-openapi.yml: tagged paths GET /UpdateService -> UpdateService",
+    "openbmc-openapi.yml: tagged paths PATCH /AccountService/Accounts/root -> AccountService",
+    "openbmc-openapi.yml: tagged paths GET /EventService/Subscriptions -> EventService",
+    "openbmc-openapi.yml: tagged paths POST /EventService/Subscriptions -> EventService",
+    "openbmc-openapi.yml: declared missing tag: AccountService",
+    "openbmc-openapi.yml: declared missing tag: Chassis",
+    "openbmc-openapi.yml: declared missing tag: EventService",
+    "openbmc-openapi.yml: declared missing tag: Managers",
+    "openbmc-openapi.yml: declared missing tag: OpenBMC Redfish API",
+    "openbmc-openapi.yml: declared missing tag: SessionService",
+    "openbmc-openapi.yml: declared missing tag: Systems",
+    "openbmc-openapi.yml: declared missing tag: UpdateService",
+    "superseded outputs removed: openbmc-event-service-api-openapi.yml, openbmc-update-service-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 9 total)"
+  ],
+  "skipped": [
+    "openbmc-accountservice-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-chassis-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-event-service-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-managers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-openbmc-redfish-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-sessionservice-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-systems-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "openbmc-update-service-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
