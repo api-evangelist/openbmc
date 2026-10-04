@@ -117,8 +117,6 @@ apis:
   description: The Event Service API from OpenBMC — 1 operation(s) for event service.
   humanURL: https://github.com/openbmc/docs
   tags:
-  - EventService
-  tags_raw:
   - Event Service
   properties:
   - type: OpenAPI
