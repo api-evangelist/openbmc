@@ -1,4 +1,4 @@
-# OpenBMC (openbmc)
+# OpenBMC
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,51 +66,92 @@
 
 OpenBMC is a Linux Foundation project producing an open source implementation of baseboard management controller firmware. Founded by Microsoft, Intel, IBM, Google, and Facebook, it provides a Linux-based firmware stack for managing and monitoring server hardware systems.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/openbmc/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/openbmc/refs/heads/main/apis.yml)
+**Areas:** Firmware · Hardware · Linux Foundation · Servers
 
-## Scope
+## OpenBMC on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for OpenBMC is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/openbmc/](https://apis.io/providers/openbmc/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (9)
 
-- Firmware
-- Hardware
-- Linux Foundation
-- Server
+- [OpenBMC API](https://apis.io/apis/openbmc/openbmc-api/) — API for interacting with OpenBMC baseboard management controller firmware, providing programmatic access to server hardware management and monitoring…
+- [OpenBMC AccountService API](https://apis.io/apis/openbmc/openbmc-accountservice-api/) — The AccountService API from OpenBMC — 1 operation(s) for accountservice.
+- [OpenBMC Chassis API](https://apis.io/apis/openbmc/openbmc-chassis-api/) — The Chassis API from OpenBMC — 1 operation(s) for chassis.
+- [OpenBMC Managers API](https://apis.io/apis/openbmc/openbmc-managers-api/) — The Managers API from OpenBMC — 3 operation(s) for managers.
+- [OpenBMC Redfish API](https://apis.io/apis/openbmc/openbmc-openbmc-redfish-api-api/) — The OpenBMC Redfish API API from OpenBMC — 1 operation(s) for openbmc redfish api.
+- [OpenBMC SessionService API](https://apis.io/apis/openbmc/openbmc-sessionservice-api/) — The SessionService API from OpenBMC — 1 operation(s) for sessionservice.
+- [OpenBMC Systems API](https://apis.io/apis/openbmc/openbmc-systems-api/) — The Systems API from OpenBMC — 3 operation(s) for systems.
+- [OpenBMC Event Service API](https://apis.io/apis/openbmc/openbmc-event-service-api/) — The Event Service API from OpenBMC — 1 operation(s) for event service.
+- [OpenBMC Update Service API](https://apis.io/apis/openbmc/openbmc-update-service-api/) — The Update Service API from OpenBMC — 1 operation(s) for update service.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-28
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### OpenBMC API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-API for interacting with OpenBMC baseboard management controller firmware, providing programmatic access to server hardware management and monitoring capabilities.
+- [Openbmc Agentic Access](https://apis.io/agentic-access/openbmc/openbmc-agentic-access/)
 
-- **Human URL:** [https://github.com/openbmc/docs](https://github.com/openbmc/docs)
+#### Collections (9)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Firmware
-- Hardware
+- [OpenBMC Redfish API](https://apis.io/collections/openbmc/open-openbmc/)
+- [OpenBMC Redfish AccountService API](https://apis.io/collections/openbmc/open-openbmc-accountservice-api/)
+- [OpenBMC Redfish AccountService Chassis API](https://apis.io/collections/openbmc/open-openbmc-chassis-api/)
+- [OpenBMC Redfish AccountService EventService API](https://apis.io/collections/openbmc/open-openbmc-eventservice-api/)
+- [OpenBMC Redfish AccountService Managers API](https://apis.io/collections/openbmc/open-openbmc-managers-api/)
+- [OpenBMC Redfish AccountService OpenBMC Redfish API API](https://apis.io/collections/openbmc/open-openbmc-openbmc-redfish-api-api/)
+- [OpenBMC Redfish AccountService SessionService API](https://apis.io/collections/openbmc/open-openbmc-sessionservice-api/)
+- [OpenBMC Redfish AccountService Systems API](https://apis.io/collections/openbmc/open-openbmc-systems-api/)
+- [OpenBMC Redfish AccountService UpdateService API](https://apis.io/collections/openbmc/open-openbmc-updateservice-api/)
 
-#### Properties
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Openbmc Authentication](https://apis.io/security/openbmc/openbmc-authentication/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Openbmc Plans Pricing](https://apis.io/plans/openbmc/openbmc-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Openbmc Rate Limits](https://apis.io/rate-limits/openbmc/openbmc-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Openbmc Finops](https://apis.io/finops/openbmc/openbmc-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Documentation](https://github.com/openbmc/docs)
-- [Postman Collection](collections/openbmc.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openbmc.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-## Common Properties
+## API Evangelist rating
 
-- [Documentation](https://github.com/openbmc/docs)
-- [Git Hub Org](https://github.com/openbmc)
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
 
-## Maintainers
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for OpenBMC: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/openbmc/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
